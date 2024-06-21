@@ -7,7 +7,7 @@ import checker from 'vite-plugin-checker'
 export default defineConfig({
   plugins: [
       react(),
-      !process.env.VITEST ? checker({ typescript: true }) : undefined
+      process.env.VITEST ? undefined : checker({ typescript: true }),
   ],
     server:{
       open: true,
